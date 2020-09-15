@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block body%}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <form method="GET" class=" p-4">
+        {{myfilter.form}}
+        <input 
+          href="#"
+          type="submit"
+          class="btn-danger btn pr-5 pl-5"
+          value="Sort"
+        />
+      </form>
+    </ul>
+  </div>
+</nav>
+
+<div class="text-center">
+  <table class="table text-center table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Product Title</th>
+        <th scope="col">Product Type</th>
+        <th scope="col">Water Line</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    {% for m in all_machines %}
+    <tbody>
+      <tr>
+        <td>{{m.product_title }}</td>
+        <td>{{m.product_type}}</td>
+        <td>{{m.water_line_compatible }}</td>
+        <td>{{m.Category}}</td>
+      </tr>
+    </tbody>
+    {%endfor%} {% endblock %}
+  </table>
+</div>

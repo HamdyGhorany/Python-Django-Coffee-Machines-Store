@@ -1,0 +1,13 @@
+
+.navbar {
+    position: relative;
+}
+.btn {
+    position: absolute;
+    right: 50px;
+}
+button, select {
+    padding: 10px;
+    border-radius: 5px;
+}
+
